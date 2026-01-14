@@ -2,6 +2,7 @@ import Aurora from "@/components/Aurora";
 import Projects from "@/components/home/Projects"; 
 import Skills from "@/components/home/Skills";
 import Education from "@/components/home/Education";
+import Footer from "@/components/Footer";
 
 function App() {
 
@@ -12,10 +13,13 @@ function App() {
         }
     };
 
+    const Resume = () => {
+        window.open("/cv/CV.pdf", "_blank", "noopener,noreferrer");
+    };
+
     return (
-        <div className="bg-slate-950"> {/* Contenedor global oscuro */}
+        <div className="bg-slate-950"> 
             
-            {/* HERO SECTION */}
             <main className="relative w-full h-screen overflow-hidden font-sans">
                 <div className="absolute inset-0 z-0">
                     <Aurora colorStops={["#3A29FF", "#FF94B4", "#FF3232"]} blend={0.5} amplitude={1.0} speed={0.5} />
@@ -44,16 +48,12 @@ function App() {
                         >
                             View Projects
                         </button>
-                        <button className="px-8 py-3 cursor-pointer border border-white/30 text-white font-medium rounded-full hover:bg-white/10 transition-all backdrop-blur-md">
+                        <button onClick={Resume} className="px-8 py-3 cursor-pointer border border-white/30 text-white font-medium rounded-full hover:bg-white/10 transition-all backdrop-blur-md">
                             Download Resume
                         </button>
                     </div>
                 </div>
 
-                <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60 animate-bounce">
-                    <span className="text-[10px] uppercase tracking-[0.2em] text-white">Scroll</span>
-                    <div className="w-px h-8 bg-linear-to-b from-white to-transparent"></div>
-                </div>
             </main>
 
             <Projects />
@@ -61,6 +61,8 @@ function App() {
 			<Skills />
 
             <Education />
+
+            <Footer />
             
         </div>
     );

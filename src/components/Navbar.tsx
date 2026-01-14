@@ -45,15 +45,7 @@ export default function Navbar() {
                     <ul className="flex gap-8 items-center">
                         <DesktopLink href="#projects" id="projects" activeSection={activeSection}>Projects</DesktopLink>
                         <DesktopLink href="#skills" id="skills" activeSection={activeSection}>Skills</DesktopLink>
-                        <DesktopLink href="#education" id="education" activeSection={activeSection}>Education</DesktopLink>
-                        
-                        <div className="h-4 w-px bg-white/10 mx-2"></div>
-                        
-                        <li>
-                            <a href="#contact" className="bg-white/10 hover:bg-white/20 text-white text-xs font-bold py-2 px-4 rounded-full border border-white/5 transition-all">
-                                Contact
-                            </a>
-                        </li>
+                        <DesktopLink href="#education" id="education" activeSection={activeSection}>Education</DesktopLink>                        
                     </ul>
                 </div>
             </nav>
@@ -72,10 +64,6 @@ export default function Navbar() {
 
                     <MobileNavItem href="#education" id="education" label="Education" activeSection={activeSection}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z" /><path d="M6 12v5c3 3 9 3 12 0v-5" /></svg>
-                    </MobileNavItem>
-
-                    <MobileNavItem href="#contact" id="contact" label="Contact" activeSection={activeSection}>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></svg>
                     </MobileNavItem>
 
                 </div>

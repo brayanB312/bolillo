@@ -8,28 +8,31 @@ const projects = [
         image: "/projects/simant.png",
         gradient: "from-blue-600 to-cyan-400" 
     },
+    {
+        title: "Volo",
+        description: "A marketplace that connects drone operators with people interested in drone services.",
+        tags: ["React", "Tailwind", "PostgreSQL", "Express"],
+        linkDemo: "https://volomx.com",
+        linkRepo: "https://github.com/brayanB312/volo_page",
+        image: "/projects/volo.png",
+        gradient: "from-blue-600 to-cyan-400" 
+    },
 ];
 
 const Projects = () => {
     return (
-        // CAMBIOS AQUÍ:
-        // 1. 'min-h-screen': Ocupa toda la pantalla como mínimo.
-        // 2. 'flex flex-col justify-center': Centra verticalmente el contenido.
         <section id="projects" className="min-h-screen w-full flex flex-col justify-center py-20 bg-slate-950 text-white px-4">
 
-            {/* Título de la sección */}
             <div className="max-w-7xl mx-auto mb-16 text-center">
                 <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-4">
-                    Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">Projects</span>
+                    Featured <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-600">Projects</span>
                 </h2>
                 <p className="text-slate-400 max-w-2xl mx-auto">
                     A selection of projects that demonstrate my technical expertise and problem-solving skills.
                 </p>
             </div>
 
-            {/* Grid de Proyectos */}
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {/* ... (Tu map de proyectos se mantiene igual) ... */}
                 {projects.map((project, index) => (
                     <div key={index} className="group relative bg-slate-900 border border-white/10 rounded-2xl overflow-hidden hover:border-white/20 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-cyan-500/10">
                         {/* Imagen */}
@@ -39,7 +42,7 @@ const Projects = () => {
                                 alt={`Screenshot of ${project.title}`}
                                 className="w-full h-full object-cover object-top transform group-hover:scale-110 transition-transform duration-500"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                            <div className="absolute inset-0 bg-linear-to-t from-slate-900/80 to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
                         </div>
 
                         {/* Contenido */}

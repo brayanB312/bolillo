@@ -1,6 +1,5 @@
 import React from 'react';
 
-// 1. DEFINICIÓN DE TIPOS
 interface Skill {
     name: string;
     img: string;
@@ -11,23 +10,19 @@ interface SkillRowProps {
     reverse?: boolean;
 }
 
-// 2. DATA: Rutas exactas basadas en tu carpeta 'public/skills'
 const skills: Skill[] = [
-    // --- Fila 1: Frontend & Core ---
     { name: "React", img: "/skills/react.svg" },
     { name: ".NET", img: "/skills/net.svg" },
     { name: "Tailwind", img: "/skills/tailwind.svg" },
     { name: "JavaScript", img: "/skills/js.svg" },
     { name: "TypeScript", img: "/skills/ts.svg" },
 
-    // --- Fila 2: Backend & Languages ---
     { name: "Next.js", img: "/skills/nextjs.svg" },
     { name: "C#", img: "/skills/c.svg" },
     { name: "Node.js", img: "/skills/nodejs.svg" },
     { name: "Python", img: "/skills/python.svg" },
     { name: "PHP", img: "/skills/php.svg" },
 
-    // --- Fila 3: Data & Tools ---
     { name: "MySQL", img: "/skills/mysql.svg" },
     { name: "PostgreSQL", img: "/skills/postgre.svg" },
     { name: "Git", img: "/skills/git.svg" },
@@ -35,7 +30,6 @@ const skills: Skill[] = [
     { name: "DevExpress", img: "/skills/devexpress.svg" },
 ];
 
-// 3. COMPONENTE AUXILIAR (Fila)
 const SkillRow: React.FC<SkillRowProps> = ({ items, reverse = false }) => {
     return (
         <div className="flex w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
