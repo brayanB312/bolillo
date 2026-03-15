@@ -17,6 +17,15 @@ const projects = [
         image: "/projects/volo.png",
         gradient: "from-blue-600 to-cyan-400" 
     },
+    {
+        title: "Avalith",
+        description: "A professional site for a high-end stone provider specializing in marble, granite, and quartz. Showcases fabrication services for residential and commercial projects, featuring a mail API",
+        tags: ["React", "Tailwind", "API", "Express", "Resend"],
+        linkDemo: "https://avalith.design/",
+        linkRepo: "https://github.com/brayanB312/Avalith",
+        image: "/projects/avalith.png",
+        gradient: "from-blue-600 to-cyan-400" 
+    },
 ];
 
 const Projects = () => {
@@ -62,7 +71,7 @@ const Projects = () => {
                             </div>
                             <div className="flex gap-4 mt-auto">
                                 <a href={project.linkDemo} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-bold hover:text-cyan-400 transition-colors">
-                                    <ExternalLinkIcon /> Live Demo
+                                    <ExternalLinkIcon /> Live Website
                                 </a>
                                 <a href={project.linkRepo} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-bold hover:text-cyan-400 transition-colors">
                                     <GithubIcon /> Source Code

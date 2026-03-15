@@ -8,7 +8,7 @@ interface EducationItem {
 
 const education: EducationItem[] = [
     {
-        institution: "Polytechnic University of Baja California (UPBC)",
+        institution: "Universidad Politécnica De Baja California (UPBC)",
         degree: "Bachelor of Engineering in Information Technology",
         period: "2022 - 2025",
         description: "Specialized in Software Development. Graduated with a focus on building scalable web applications, database architecture, and agile methodologies.",
