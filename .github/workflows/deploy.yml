@@ -8,32 +8,30 @@ on:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
-
     permissions:
       contents: read
       packages: write
 
     steps:
       - name: Descargar código
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4 # Actualizado a v4
 
       - name: Iniciar sesión en GitHub Container Registry
-        uses: docker/login-action@v2
+        uses: docker/login-action@v3 # Actualizado a v3
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }} # Este secreto ya existe automáticamente en GitHub
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Construir y subir imagen a GHCR
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v5 # Actualizado a v5
         with:
           context: .
           push: true
-          # Cambia "TU_USUARIO" por tu nombre de usuario de GitHub en minúsculas
           tags: ghcr.io/brayanb312/mi-sitio-react:latest 
 
   deploy:
-    needs: build-and-push # Espera a que la imagen se construya
+    needs: build-and-push
     runs-on: ubuntu-latest
     steps:
       - name: Desplegar en la VPS
@@ -43,12 +41,17 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
-            # 1. Descarga la imagen terminada (Cambia "TU_USUARIO")
+            # 1. Descarga la imagen
             docker pull ghcr.io/brayanb312/mi-sitio-react:latest
             
-            # 2. Detiene y borra la versión vieja
+            # 2. Detiene y borra el anterior
             docker stop sitio-produccion || true
             docker rm sitio-produccion || true
             
-            # 3. Arranca la nueva versión
-            docker run -d -p 80:80 --name sitio-produccion ghcr.io/brayanb312/mi-sitio-react:latest
+            # 3. Arranca con puertos 80, 443 y los certificados (CAMBIA TU_DOMINIO_REAL)
+            docker run -d \
+              -p 80:80 -p 443:443 \
+              --name sitio-produccion \
+              -v /etc/letsencrypt/live/TU_DOMINIO_REAL/fullchain.pem:/etc/nginx/certs/fullchain.pem:ro \
+              -v /etc/letsencrypt/live/TU_DOMINIO_REAL/privkey.pem:/etc/nginx/certs/privkey.pem:ro \
+              ghcr.io/brayanb312/mi-sitio-react:latest
