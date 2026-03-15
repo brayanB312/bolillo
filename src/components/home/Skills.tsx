@@ -10,24 +10,28 @@ interface SkillRowProps {
     reverse?: boolean;
 }
 
+// 1. Array purgado y organizado por categorías lógicas
 const skills: Skill[] = [
+    // Fila 1: Frontend & Ecosistema JS
     { name: "React", img: "/skills/react.svg" },
-    { name: ".NET", img: "/skills/net.svg" },
-    { name: "Tailwind", img: "/skills/tailwind.svg" },
-    { name: "JavaScript", img: "/skills/js.svg" },
-    { name: "TypeScript", img: "/skills/ts.svg" },
-
     { name: "Next.js", img: "/skills/nextjs.svg" },
-    { name: "C#", img: "/skills/c.svg" },
-    { name: "Node.js", img: "/skills/nodejs.svg" },
-    { name: "Python", img: "/skills/python.svg" },
-    { name: "PHP", img: "/skills/php.svg" },
+    { name: "TypeScript", img: "/skills/ts.svg" },
+    { name: "JavaScript", img: "/skills/js.svg" },
+    { name: "Tailwind", img: "/skills/tailwind.svg" },
 
-    { name: "MySQL", img: "/skills/mysql.svg" },
+    // Fila 2: Backend & Enterprise
+    { name: "Node.js", img: "/skills/nodejs.svg" },
+    { name: "Express", img: "/skills/express.png" }, // <- Reemplaza a Python
+    { name: "C#", img: "/skills/c.svg" },
+    { name: ".NET", img: "/skills/net.svg" },
+    { name: "DevExpress", img: "/skills/devexpress.svg" },
+
+    // Fila 3: Bases de Datos, Infraestructura & Deploy
     { name: "PostgreSQL", img: "/skills/postgre.svg" },
+    { name: "MySQL", img: "/skills/mysql.svg" },
+    { name: "Nginx", img: "/skills/nginx.webp" }, // <- Reemplaza a PHP
     { name: "Git", img: "/skills/git.svg" },
     { name: "GitHub", img: "/skills/github.svg" },
-    { name: "DevExpress", img: "/skills/devexpress.svg" },
 ];
 
 const SkillRow: React.FC<SkillRowProps> = ({ items, reverse = false }) => {
@@ -58,7 +62,7 @@ const SkillRow: React.FC<SkillRowProps> = ({ items, reverse = false }) => {
     );
 };
 
-// 4. COMPONENTE PRINCIPAL
+// COMPONENTE PRINCIPAL
 const Skills: React.FC = () => {
     const row1 = skills.slice(0, 5);
     const row2 = skills.slice(5, 10);
@@ -95,13 +99,12 @@ const Skills: React.FC = () => {
 
             <div className="relative z-10 w-full px-4">
                 
-                {/* --- TÍTULO ACTUALIZADO (Mismo formato que Projects) --- */}
                 <div className="max-w-7xl mx-auto mb-16 text-center">
                     <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-4 text-white">
                         Technical <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">Skills</span>
                     </h2>
-                    <p className="text-slate-400 max-w-2xl mx-auto">
-                        A diverse set of technologies and tools I use to build robust and scalable applications.
+                    <p className="text-slate-400 max-w-2xl mx-auto text-lg">
+                        The core technologies I leverage to build scalable full-stack applications and deploy them securely to production.
                     </p>
                 </div>
 

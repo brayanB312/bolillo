@@ -1,5 +1,5 @@
 import Aurora from "@/components/Aurora";
-import Projects from "@/components/home/Projects"; 
+import Projects from "@/components/home/Projects";
 import Skills from "@/components/home/Skills";
 import Education from "@/components/home/Education";
 import Footer from "@/components/Footer";
@@ -18,8 +18,8 @@ function App() {
     };
 
     return (
-        <div className="bg-slate-950"> 
-            
+        <div className="bg-slate-950">
+
             <main className="relative w-full h-screen overflow-hidden font-sans">
                 <div className="absolute inset-0 z-0">
                     <Aurora colorStops={["#3A29FF", "#FF94B4", "#FF3232"]} blend={0.5} amplitude={1.0} speed={0.5} />
@@ -31,18 +31,18 @@ function App() {
                     </div>
 
                     <h1 className="text-white font-black text-6xl md:text-8xl lg:text-9xl tracking-tighter drop-shadow-2xl mb-2">BRAYAN GALAVIZ</h1>
-                    
+
                     <h2 className="text-lg md:text-2xl text-slate-300 font-mono mt-2 max-w-3xl">
-                        <span className="text-white font-bold">Software Developer</span> <span className="mx-3 text-slate-500">|</span> Information Technology
+                        <span className="text-white font-bold">Fullstack Web Developer</span> <span className="mx-3 text-cyan-500">|</span> React, Next.js & Node.js
                     </h2>
 
-                    <p className="mt-6 text-slate-400 max-w-xl text-sm md:text-base leading-relaxed">
-                        Building robust and scalable digital solutions. Specialized in modern software architecture, efficient code, and problem-solving.
+                    <p className="mt-6 text-slate-400 max-w-xl text-sm md:text-base leading-relaxed mx-auto">
+                        Specialized in building dynamic user interfaces and secure backend architectures. I transform business requirements into fast, scalable web platforms, ranging from responsive landing pages to complex admin dashboards with relational databases.
                     </p>
 
                     <div className="mt-10 flex flex-col sm:flex-row gap-4">
                         {/* Botón con acción de Scroll */}
-                        <button 
+                        <button
                             onClick={handleScrollToProjects}
                             className="px-8 py-3 cursor-pointer bg-white text-slate-950 font-bold rounded-full hover:bg-cyan-50 transition-all shadow-[0_0_20px_rgba(255,255,255,0.3)]"
                         >
@@ -58,12 +58,12 @@ function App() {
 
             <Projects />
 
-			<Skills />
+            <Skills />
 
             <Education />
 
             <Footer />
-            
+
         </div>
     );
 }
