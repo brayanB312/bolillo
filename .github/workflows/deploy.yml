@@ -52,6 +52,6 @@ jobs:
             docker run -d \
               -p 80:80 -p 443:443 \
               --name sitio-produccion \
-              -v /etc/letsencrypt/live/TU_DOMINIO_REAL/fullchain.pem:/etc/nginx/certs/fullchain.pem:ro \
-              -v /etc/letsencrypt/live/TU_DOMINIO_REAL/privkey.pem:/etc/nginx/certs/privkey.pem:ro \
+              -v /etc/letsencrypt/live/brayangaldom.com-0001/fullchain.pem:/etc/nginx/certs/fullchain.pem:ro \
+              -v /etc/letsencrypt/live/brayangaldom.com-0001/privkey.pem:/etc/nginx/certs/privkey.pem:ro \
               ghcr.io/brayanb312/mi-sitio-react:latest
