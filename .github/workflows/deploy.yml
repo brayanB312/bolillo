@@ -50,7 +50,7 @@ jobs:
             
             # 3. Arranca con puertos 80, 443 y los certificados (CAMBIA TU_DOMINIO_REAL)
             docker run -d \
-              -p 80:80 -p 443:443 \
+              -p 8080:80 \
               --name sitio-produccion \
               -v /etc/letsencrypt/live/brayangaldom.com-0001/fullchain.pem:/etc/nginx/certs/fullchain.pem:ro \
               -v /etc/letsencrypt/live/brayangaldom.com-0001/privkey.pem:/etc/nginx/certs/privkey.pem:ro \
